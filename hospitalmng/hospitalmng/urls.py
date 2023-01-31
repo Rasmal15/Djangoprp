@@ -19,7 +19,8 @@ from accounts.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',MainHome.as_view()),
-    path('account/',include('accounts.urls'))
+    path('',MainHome.as_view(),name='h'),
+    path('account/',include('accounts.urls')),
+    path('op/',include('operations.urls'))
     
 ]

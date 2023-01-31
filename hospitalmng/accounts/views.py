@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic import View
 from django.http import HttpResponse
 
@@ -20,6 +20,7 @@ class RegView(View):
             email=form_data.cleaned_data.get('email')
             experience=form_data.cleaned_data.get('experience')
             password=form_data.cleaned_data.get('password')
+            return redirect('h')
         else:
             return render(req,'reg.html',{'form':form_data})
 class LogView(View):
