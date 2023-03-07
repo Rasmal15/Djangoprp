@@ -5,6 +5,9 @@
     {% csrf_token %}
     <table>
         {{form.as_table}}
+        
     </table>
+    res: {{res}} <br><br>
+    <button class="btn btn-success">add</button>
 </form>
 {% endblock %}

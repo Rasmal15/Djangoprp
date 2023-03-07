@@ -16,11 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from accounts.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+from auth_acc.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',MainHome.as_view(),name='h'),
-    path('account/',include('accounts.urls')),
-    path('op/',include('operations.urls'))
     
-]
+    path('account/',include('accounts.urls')),
+    path('op/',include('operations.urls')),
+    path('aut/',include('auth_acc.urls')),
+    path('',Home.as_view(),name='mh')
+
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

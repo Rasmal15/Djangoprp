@@ -1,0 +1,13 @@
+{% extends 'nav.html' %}
+{% block nav %}
+<h1 class="text-center">Substraction</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+        
+    </table>
+    res: {{res}} <br><br>
+    <button class="btn btn-success">Substract</button>
+</form>
+{% endblock %}
